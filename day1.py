@@ -1,4 +1,4 @@
-def part1(instructions: list[int]):
+def part1(instructions: list[int]) -> int:
     count = 0
     pos = 50
     for i in instructions:
@@ -9,7 +9,7 @@ def part1(instructions: list[int]):
     return count
 
 
-def part2(instructions: list[int]):
+def part2(instructions: list[int]) -> int:
     count = 0
     pos = 50
     for i in instructions:
