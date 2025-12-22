@@ -1,4 +1,4 @@
-def part1(id_ranges: list[list[int]]):
+def part1(id_ranges: list[list[int]]) -> int:
     total = 0
     for start, end in id_ranges:
         while start <= end:
@@ -12,28 +12,34 @@ def part1(id_ranges: list[list[int]]):
     return total
 
 
-def part2(id_ranges: list[list[int]]):
+def is_made_with_repeated(num: int) -> bool:
+    num_str = str(num)
+    n = len(num_str)
+    for i in range(1, n // 2 + 1):
+        if n % i != 0:
+            continue
+
+        seq = num_str[:i]
+        j = i
+        made_with_repeated = True
+        while j < n:
+            if num_str[j : j + i] != seq:
+                made_with_repeated = False
+                break
+            j += i
+
+        if made_with_repeated:
+            return True
+
+    return False
+
+
+def part2(id_ranges: list[list[int]]) -> int:
     total = 0
     for start, end in id_ranges:
         while start <= end:
-            num_str = str(start)
-            n = len(num_str)
-
-            for i in range(1, n // 2 + 1):
-                seq = num_str[:i]
-                j = i
-
-                made_with_repeated = True
-                while j < n:
-                    if num_str[j : j + i] != seq:
-                        made_with_repeated = False
-                        break
-                    j += i
-
-                if made_with_repeated:
-                    total += start
-                    break
-
+            if is_made_with_repeated(start):
+                total += start
             start += 1
 
     return total
