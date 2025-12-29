@@ -29,7 +29,7 @@ def part2(banks: list[list[int]]) -> int:
 
 
 if __name__ == "__main__":
-    with open("data/day3.txt", "r") as f:
+    with open("data/day3.txt") as f:
         banks = [[int(c) for c in l.strip()] for l in f.readlines()]
 
     # example input

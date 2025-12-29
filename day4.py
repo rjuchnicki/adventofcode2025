@@ -62,7 +62,7 @@ def part2(grid: list[list[str]]) -> int:
 
 
 if __name__ == "__main__":
-    with open("data/day4.txt", "r") as f:
+    with open("data/day4.txt") as f:
         grid = [[c for c in l.strip()] for l in f.readlines()]
 
     print(part1(grid))

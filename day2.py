@@ -46,7 +46,7 @@ def part2(id_ranges: list[list[int]]) -> int:
 
 
 if __name__ == "__main__":
-    with open("data/day2.txt", "r") as f:
+    with open("data/day2.txt") as f:
         id_ranges = [
             [int(i) for i in r.split("-")] for r in f.read().strip().split(",")
         ]

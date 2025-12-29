@@ -26,7 +26,7 @@ def part2(instructions: list[int]) -> int:
 
 
 if __name__ == "__main__":
-    with open("data/day1.txt", "r") as f:
+    with open("data/day1.txt") as f:
         instructions = [l.strip() for l in f.readlines()]
 
     instructions = [

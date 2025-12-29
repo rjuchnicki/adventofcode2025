@@ -27,10 +27,13 @@ def part2(operands_str: list[str], operators: list[str]):
     numbers = [""] * len(operands_str)
 
     for i in range(len(operands_str[0]) - 1, -2, -1):
+        # Final iteration: process remaining numbers
         if i == -1:
             total += compute_result(numbers, operators[operator_index])
             break
-        elif all(s[i] == " " for s in operands_str):
+
+        # Space column indicates boundary between problems
+        if all(s[i] == " " for s in operands_str):
             total += compute_result(numbers, operators[operator_index])
             numbers = [""] * len(operands_str)
             operator_index -= 1
@@ -44,7 +47,7 @@ def part2(operands_str: list[str], operators: list[str]):
 
 
 if __name__ == "__main__":
-    with open("data/day6.txt", "r") as f:
+    with open("data/day6.txt") as f:
         input = f.readlines()
 
     operands = [[int(n) for n in i.split()] for i in input[:-1]]

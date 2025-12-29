@@ -27,7 +27,7 @@ def part2(intervals: list[list[int]]) -> int:
 
 
 if __name__ == "__main__":
-    with open("data/day5.txt", "r") as f:
+    with open("data/day5.txt") as f:
         input = f.read()
         intervals, ingredients = input.split("\n\n")
 
